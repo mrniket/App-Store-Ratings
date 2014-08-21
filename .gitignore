@@ -1,0 +1,17 @@
+.sass-*
+*.css
+*.html
+*.js
+*.log
+*.map
+*.sassc
+*.sublime-workspace
+assets/*/partial/_sprite*
+assets/img/*.png
+!assets/img/logo.png
+!assets/javascript/**/*.js
+assets/vendor
+build
+docs
+node_modules
+test/report
