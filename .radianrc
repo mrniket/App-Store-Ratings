@@ -1,0 +1,7 @@
+{
+  "precompilers": {
+    "js": "coffee",
+    "css": "scss",
+    "html": "jade"
+  }
+}
