@@ -8,6 +8,8 @@ require.config
     'angular-resource': '../vendor/angular-resource/angular-resource'
     'angular-route': '../vendor/angular-route/angular-route'
     'lodash': '../vendor/lodash/dist/lodash'
+    'angular-bootstrap': '../vendor/angular-bootstrap/ui-bootstrap-tpls.min'
+    'bootstrap': '../vendor/bootstrap/dist/js/bootstrap.min'
   shim:
     'angular':
       exports: 'angular'

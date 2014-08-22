@@ -13,11 +13,13 @@ define [
     'angular-animate'
     'angular-resource'
     'angular-route'
+    'angular-bootstrap'
   ], () ->
     A.module cfg.ngApp, [
       'ngAnimate'
       'ngResource'
       'ngRoute'
+      'ui.bootstrap'
     ]
 
     # Jump to [`controller/app-controller.coffee`](app-controller.html) ☛
