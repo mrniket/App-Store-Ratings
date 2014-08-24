@@ -1,0 +1,3 @@
+div#reviews
+	div(ng-repeat="review in reviews")
+		review(title="{{review.title.label}}", rate="{{review['im:rating'].label}}", body="{{review.content.label}}")

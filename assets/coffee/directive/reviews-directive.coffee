@@ -1,13 +1,17 @@
 define [
   'config'
   'directive/radian-directive'
+  'service/app-store-service'
 ], (cfg, RD) ->
   RD 'reviews', [
     '$rootScope'
-  ], ($rootScope) ->
-    templateUrl: cfg.path.partial + 'directive/stub-partial.html'
-    restrict: 'A'
+    'appStoreService'
+  ], ($rootScope, appStoreService) ->
+    templateUrl: cfg.path.partial + 'directive/reviews-partial.html'
+    restrict: 'E'
     replace: true
     scope:
-      items: '=ngModel'
+      'data': '='
     link: ($scope, $element, $attrs) ->
+      $scope.reviews = $scope.data
+      $scope.reviews.shift()

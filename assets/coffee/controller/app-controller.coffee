@@ -19,6 +19,12 @@ define [
   # [`$route.reload()`](http://docs.angularjs.org/api/ngRoute.$route) after the navigation data has been loaded.
   # Jump to [`routes.coffee`](routes.html) ☛
   'routes'
+  # services
+  'service/app-store-service'
+  # directives
+  'directive/review-directive'
+  'directive/reviews-directive'
+  'directive/app-chooser-directive'
   ], (cfg, A, RC) ->
   # Every controller class in radian follows the same pattern. It's also preferable to explicity specify the `$inject`
   # modules as this code will be minified.
@@ -26,7 +32,16 @@ define [
     # You register your controller by calling `@register` and passing in the class's name and then the dependancies as
     # an array.
     @register 'AppController', [
-      '$scope']
+      '$scope'
+      'appStoreService'
+    ]
 
     init: () ->
-      
+      @appStoreService.getAppInfo(319691481).success (appInfo) =>
+        @$scope.apps = [
+            {
+              name: appInfo.feed.entry[0]["im:name"].label
+              icon: appInfo.feed.entry[0]["im:image"][2].label
+            }
+          ]
+        @$scope.reviews = appInfo.feed.entry

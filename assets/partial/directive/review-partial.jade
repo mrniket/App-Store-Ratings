@@ -1,0 +1,9 @@
+div#review
+	.row
+		.col-md-8
+			h4 {{title}}
+		.col-md-2
+			rating(ng-model="rate", readonly="true", state-on="ratingStates.on", state-off="ratingStates.off").rating
+	.row
+		.col-md-12
+			p {{body}}
