@@ -25,6 +25,7 @@ define [
   'directive/review-directive'
   'directive/reviews-directive'
   'directive/app-chooser-directive'
+  'directive/store-chooser-directive'
   ], (cfg, A, RC) ->
   # Every controller class in radian follows the same pattern. It's also preferable to explicity specify the `$inject`
   # modules as this code will be minified.
@@ -37,11 +38,20 @@ define [
     ]
 
     init: () ->
-      @appStoreService.getAppInfo(319691481).success (appInfo) =>
-        @$scope.apps = [
-            {
-              name: 'Ocado' # appInfo.feed.entry[0]["im:name"].label
-              icon: "http://a915.phobos.apple.com/us/r30/Purple4/v4/a5/2a/e0/a52ae0b6-b44f-826d-facb-fcbd241a1688/mzl.vzlmvftd.75x75-65.png" # appInfo.feed.entry[0]["im:image"][2].label
-            }
-          ]
-        @$scope.reviews = appInfo
+      @$scope.stores = [
+          'iOS'
+          'Android'
+        ]
+      @$scope.apps = [
+        {
+          name: 'Ocado' # appInfo.feed.entry[0]["im:name"].label
+          icon: "http://a915.phobos.apple.com/us/r30/Purple4/v4/a5/2a/e0/a52ae0b6-b44f-826d-facb-fcbd241a1688/mzl.vzlmvftd.75x75-65.png" # appInfo.feed.entry[0]["im:image"][2].label
+        }
+      ]
+      appIds =
+        'iOS': 319691481
+        'Android': 'com.ocado.mobile.android'
+      @$scope.$watch 'storeChosen', (storeChosen) =>
+        if storeChosen
+          @appStoreService.getReviews(storeChosen, appIds[storeChosen]).success (reviews) =>
+            @$scope.reviews = reviews

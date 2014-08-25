@@ -1,5 +1,9 @@
-div#main.row
-	.col-md-2.col-lg-2
-		app-chooser(apps="apps")
-	.col-md-10.col-lg-10
-		reviews(data="reviews")
+div#main.container-fluid
+	.row
+		.col-md-offset-1.col-md-10
+			store-chooser(stores="stores", store-chosen="storeChosen")
+	.row
+		.col-md-1.col-lg-1
+			app-chooser(apps="apps")
+		.col-md-10.col-lg-10
+			reviews(data="reviews")

@@ -1,4 +1,5 @@
 div#app-chooser
-	div(ng-repeat="app in apps")
-		img(ng-src="{{app.icon}}")
-		p {{app.name}}
+	div.centered
+		div(ng-repeat="app in apps")
+			img(ng-src="{{app.icon}}")
+			p.text-center {{app.name}}

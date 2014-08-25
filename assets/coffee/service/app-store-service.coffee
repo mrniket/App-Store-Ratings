@@ -9,8 +9,10 @@ define [
 
     init: () ->
 
-    getReviewsForAppWithId: (id) ->
-      @$http({method: 'GET', url: "api/apple/#{id}"})
-
-    getAppInfo: (id) ->
-      @$http({method: 'GET', url: "api/apple/#{id}"})
+    getReviews: (store, id) ->
+      if store == 'iOS'
+        company = 'apple'
+      else
+        company = 'google'
+      
+      @$http({method: 'GET', url: "api/#{company}/#{id}"})

@@ -1,0 +1,3 @@
+div#store-chooser
+	tabset(justified="true")
+		tab(ng-repeat="store in stores", heading="{{store}}", select="chosen(store)")
