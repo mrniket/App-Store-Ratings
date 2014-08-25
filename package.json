@@ -51,5 +51,11 @@
     "express": "3.4.8",
     "grunt": "0.4.4",
     "karma": "0.12.1"
+  },
+  "dependencies": {
+    "cheerio": "^0.17.0",
+    "q": "^1.0.1",
+    "redis": "^0.12.1",
+    "request": "^2.40.0"
   }
 }

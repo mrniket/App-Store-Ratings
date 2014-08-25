@@ -1,6 +1,7 @@
 # This is a helper file that is used to launch a local server used for development of your app.
 express = require 'express'
 fs = require 'fs'
+api = require './server/api'
 app = express()
 # By default the server launches at `http://localhost:8000`, you can change it in the
 # [`grunt/express-server.coffee`](express-server.html) file config.
@@ -28,6 +29,9 @@ app.configure () ->
 
 app.options '*', (request, response, next) ->
   response.send 200
+
+app.get '/api/google/:id', api.google
+app.get '/api/apple/:id', api.apple
 
 app.all '*', (request, response, next) ->
   response.sendfile "#{__dirname}/index.html"
