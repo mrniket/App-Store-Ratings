@@ -1,12 +1,10 @@
 define [
   'config'
   'directive/radian-directive'
-  'service/app-store-service'
 ], (cfg, RD) ->
   RD 'reviews', [
     '$rootScope'
-    'appStoreService'
-  ], ($rootScope, appStoreService) ->
+  ], ($rootScope) ->
     templateUrl: cfg.path.partial + 'directive/reviews-partial.html'
     restrict: 'E'
     replace: true
@@ -14,4 +12,3 @@ define [
       'data': '='
     link: ($scope, $element, $attrs) ->
       $scope.reviews = $scope.data
-      $scope.reviews.shift()

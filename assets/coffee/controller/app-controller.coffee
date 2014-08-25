@@ -40,8 +40,8 @@ define [
       @appStoreService.getAppInfo(319691481).success (appInfo) =>
         @$scope.apps = [
             {
-              name: appInfo.feed.entry[0]["im:name"].label
-              icon: appInfo.feed.entry[0]["im:image"][2].label
+              name: 'Ocado' # appInfo.feed.entry[0]["im:name"].label
+              icon: "http://a915.phobos.apple.com/us/r30/Purple4/v4/a5/2a/e0/a52ae0b6-b44f-826d-facb-fcbd241a1688/mzl.vzlmvftd.75x75-65.png" # appInfo.feed.entry[0]["im:image"][2].label
             }
           ]
-        @$scope.reviews = appInfo.feed.entry
+        @$scope.reviews = appInfo

@@ -11,6 +11,8 @@ exports.google = (html) ->
 		review.title = $(reviewData).find('.review-title').text()
 		review.body = $(reviewData).find('.review-body').text()
 		review.body = review.body.substring(review.title.length + 2, review.body.length - 15)
+		if !review.title
+			review.title = review.body
 		reviews.push review
 	reviews.sort (a, b) ->
 		if a.date == b.date

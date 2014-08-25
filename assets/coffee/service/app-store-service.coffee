@@ -5,13 +5,12 @@ define [
     @register 'appStoreService', [
       '$q'
       '$http'
-      'Restangular'
     ]
 
     init: () ->
 
     getReviewsForAppWithId: (id) ->
-      @$http({method: 'GET', url: "http://itunes.apple.com/gb/rss/customerreviews/id=#{id}/json"})
+      @$http({method: 'GET', url: "api/apple/#{id}"})
 
     getAppInfo: (id) ->
-      @$http({method: 'GET', url: "http://itunes.apple.com/gb/rss/customerreviews/id=#{id}/json"})
+      @$http({method: 'GET', url: "api/apple/#{id}"})
