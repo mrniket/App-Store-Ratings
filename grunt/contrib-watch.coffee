@@ -58,7 +58,7 @@ module.exports = (grunt) ->
         'sprite'
       ]
     express:
-      files:  [ 
+      files:  [
         "*.coffee"
         "server/**/*.coffee"
       ]
