@@ -8,6 +8,7 @@ module.exports = (grunt) ->
         'grunt/*.coffee'
         'test/**/*.coffee'
         '*.coffee'
+        'server/**/*.coffee'
       ]
       tasks: [
         'coffeelint'
@@ -56,6 +57,14 @@ module.exports = (grunt) ->
       tasks: [
         'sprite'
       ]
+    express:
+      files:  [ 
+        "*.coffee"
+        "server/**/*.coffee"
+      ]
+      tasks:  [ 'express:all' ]
+      options:
+        spawn: false
     
 
   changedFiles = {}
