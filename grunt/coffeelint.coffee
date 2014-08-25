@@ -18,11 +18,13 @@ module.exports = (grunt) ->
       cyclomatic_complexity:
         level: 'error'
         value: 11 # http://stackoverflow.com/questions/20702/whats-your-a-good-limit-for-cyclomatic-complexity
+      no_tabs:
+        level: 'ignore'
       indentation:
-        level: 'error'
-        value: 2
+        level: 'ignore'
+        value: 1
       max_line_length:
-        level: 'error'
-        value: 120
+        level: 'ignore'
+        # value: 120
 
   grunt.loadNpmTasks 'grunt-coffeelint'
