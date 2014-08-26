@@ -6,4 +6,5 @@ div#main.container-fluid
 		.col-md-1.col-lg-1
 			app-chooser(app-index="appIndex")
 		.col-md-10.col-lg-10
-			reviews(data="reviews")
+			wandering-cubes-spinner(ng-show="loading")
+			reviews(data="reviews", ng-hide="loading")

@@ -43,13 +43,16 @@ define [
         'Android': 'com.ocado.mobile.android'
       @$scope.$watch 'storeChosen', (storeChosen) =>
         if storeChosen && @$scope.appIndex != undefined
+          @$scope.loading = true
           @appStoreService.getReviews(storeChosen, cfg.apps[@$scope.appIndex][storeChosen]).success (reviews) =>
+            @$scope.loading = false
             @$scope.reviews = reviews
 
       @$scope.$watch 'appIndex', (appIndex) =>
         if @$scope.storeChosen && appIndex != undefined
-          console.log cfg.apps[appIndex][@$scope.storeChosen]
+          @$scope.loading = true
           @appStoreService.getReviews(@$scope.storeChosen, cfg.apps[appIndex][@$scope.storeChosen]).success (reviews) =>
+            @$scope.loading = false
             @$scope.reviews = reviews
 
       @$scope.appIndex = 0
