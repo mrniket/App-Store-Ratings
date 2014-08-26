@@ -38,10 +38,6 @@ define [
     ]
 
     init: () ->
-      @$scope.stores = [
-          'iOS'
-          'Android'
-        ]
       @$scope.apps = [
         {
           name: 'Ocado' # appInfo.feed.entry[0]["im:name"].label
@@ -52,6 +48,12 @@ define [
         'iOS': 319691481
         'Android': 'com.ocado.mobile.android'
       @$scope.$watch 'storeChosen', (storeChosen) =>
-        if storeChosen
-          @appStoreService.getReviews(storeChosen, appIds[storeChosen]).success (reviews) =>
+        if storeChosen && @$scope.appIndex != undefined
+          @appStoreService.getReviews(storeChosen, cfg.apps[@$scope.appIndex][storeChosen]).success (reviews) =>
+            @$scope.reviews = reviews
+
+      @$scope.$watch 'appIndex', (appIndex) =>
+        if @$scope.storeChosen && appIndex != undefined
+          console.log cfg.apps[appIndex][@$scope.storeChosen]
+          @appStoreService.getReviews(@$scope.storeChosen, cfg.apps[appIndex][@$scope.storeChosen]).success (reviews) =>
             @$scope.reviews = reviews

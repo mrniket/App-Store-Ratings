@@ -9,7 +9,8 @@ define [
     restrict: 'E'
     replace: true
     scope:
-      apps: '='
+      appIndex: '='
     link: ($scope, $element, $attrs) ->
-
-      
+      $scope.apps = cfg.apps
+      $scope.appChosen = (index) ->
+        $scope.appIndex = index

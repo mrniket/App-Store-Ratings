@@ -9,9 +9,10 @@ define [
     restrict: 'E'
     replace: true
     scope:
-      stores: '='
       storeChosen: '='
     link: ($scope, $element, $attrs) ->
+
+      $scope.stores = cfg.stores
 
       $scope.chosen = (store) ->
         $scope.storeChosen = store
