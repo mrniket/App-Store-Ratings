@@ -14,12 +14,14 @@ define [
     'angular-resource'
     'angular-route'
     'angular-bootstrap'
+    'angular-spinkit'
   ], () ->
     A.module cfg.ngApp, [
       'ngAnimate'
       'ngResource'
       'ngRoute'
       'ui.bootstrap'
+      'angularSpinkit'
     ]
 
     # Jump to [`controller/app-controller.coffee`](app-controller.html) ☛

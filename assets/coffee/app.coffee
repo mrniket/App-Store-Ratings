@@ -10,6 +10,7 @@ require.config
     'lodash': '../vendor/lodash/dist/lodash'
     'angular-bootstrap': '../vendor/angular-bootstrap/ui-bootstrap-tpls.min'
     'bootstrap': '../vendor/bootstrap/dist/js/bootstrap.min'
+    'angular-spinkit': '../vendor/angular-spinkit/build/angular-spinkit.min'
   shim:
     'angular':
       exports: 'angular'
