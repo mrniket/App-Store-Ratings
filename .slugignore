@@ -1,0 +1,10 @@
+.sass-*
+*.sassc
+*.sublime-workspace
+*.log
+*.map
+docs
+test/report
+*.jade
+assets/**/*.coffee
+README.md

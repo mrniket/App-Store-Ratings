@@ -8,8 +8,7 @@
   "scripts": {
     "build": "grunt build",
     "test": "grunt test",
-    "start": "coffee server.coffee",
-    "postinstall": "echo postinstall time; ./node_modules/grunt-cli/bin/grunt build"
+    "start": "./node_modules/coffee-script/bin/coffee server.coffee"
   },
   "devDependencies": {
     "coffee-script": "1.7.1",
