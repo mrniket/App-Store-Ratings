@@ -1,3 +1,16 @@
 #app-chooser {
+	img {
+		padding: 5px;
+		margin: 5px;
+		border-radius: 13.5px;
+		border: 2px solid rgb(204, 204, 204);
+	}
 
+	img:hover {
+		background: rgb(204, 204, 204);
+	}
+
+	.selected {
+		background: rgb(204, 204, 204);
+	}
 }

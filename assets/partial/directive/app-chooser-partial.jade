@@ -1,5 +1,3 @@
 div#app-chooser
-	div.centered
-		div(ng-repeat="app in apps", ng-click="appChosen($index)")
-			img(ng-src="{{app.icon}}")
-			p.text-center {{app.name}}
+	div(ng-repeat="app in apps", ng-click="appChosen($index)")
+		img(ng-src="{{app.icon}}", ng-class="{ selected: isSelected($index) }")

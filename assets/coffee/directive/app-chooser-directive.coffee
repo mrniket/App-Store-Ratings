@@ -14,3 +14,6 @@ define [
       $scope.apps = cfg.apps
       $scope.appChosen = (index) ->
         $scope.appIndex = index
+
+      $scope.isSelected = (index) ->
+        $scope.appIndex == index
