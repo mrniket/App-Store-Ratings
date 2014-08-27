@@ -6,7 +6,6 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "build": "grunt build",
     "test": "grunt test",
     "start": "./node_modules/coffee-script/bin/coffee server.coffee"
   },
