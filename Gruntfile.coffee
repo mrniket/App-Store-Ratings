@@ -115,7 +115,7 @@ module.exports = (grunt) ->
     'githash'
     'install'
     'sprite'
-    'imagemin'
+    # 'imagemin'
     'compass:prodSCSS'
     'cmq'
     'cssmin'
@@ -127,4 +127,8 @@ module.exports = (grunt) ->
     'express'
     'exec:crawl'
     'replace'
+  ]
+
+  grunt.registerTask 'heroku:production', 'for deployment on heroku', [
+    'build'
   ]

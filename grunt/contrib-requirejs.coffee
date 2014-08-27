@@ -13,5 +13,9 @@ module.exports = (grunt) ->
           'angular-resource': 'empty:'
           'angular-route': 'empty:'
           'lodash': 'empty:'
+          'angular-bootstrap': 'empty:'
+          'angular-bootstrap': 'empty:'
+          'bootstrap': 'empty:'
+          'angular-spinkit': 'empty:'
 
   grunt.loadNpmTasks 'grunt-contrib-requirejs'
