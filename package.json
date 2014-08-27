@@ -40,7 +40,6 @@
   },
   "dependencies": {
     "cheerio": "^0.17.0",
-    "imagemin": "^1.0.4",
     "q": "^1.0.1",
     "redis": "^0.12.1",
     "request": "^2.40.0",
